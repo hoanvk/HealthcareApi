@@ -1,0 +1,84 @@
+2020-07-19 14:35:42,911  INFO Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.? [?] - MESSAGE: User profile is available. Using 'C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+ 2020-07-19 14:35:43,395  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 DEBUG http://localhost:64735/  0
+ 2020-07-19 14:35:43,397  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:44371/api/values  
+ 2020-07-19 14:35:43,429  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 33.0009ms 200 
+ 2020-07-19 14:35:43,633  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller HealthCareApi.Controllers.ValuesController (HealthCareApi).
+ 2020-07-19 14:35:43,646  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HealthCareApi.Controllers.ValuesController.Get (HealthCareApi) - Validation state: Valid
+ 2020-07-19 14:35:43,653  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HealthCareApi.Controllers.ValuesController.Get (HealthCareApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.5737ms.
+ 2020-07-19 14:35:43,667  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'System.String[]'.
+ 2020-07-19 14:35:43,717  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HealthCareApi.Controllers.ValuesController.Get (HealthCareApi) in 77.8559ms
+ 2020-07-19 14:35:43,727  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 332.0429ms 200 application/json; charset=utf-8
+ 2020-07-19 14:35:50,160  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65
+ 2020-07-19 14:35:50,186  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "PostHeaAgents", controller = "Agent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent) on controller HealthCareApi.Controllers.AgentController (HealthCareApi).
+ 2020-07-19 14:35:50,692  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi) - Validation state: Valid
+ 2020-07-19 14:35:51,398  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.1.14-servicing-32113 initialized 'ModelContext' using provider 'Oracle.EntityFrameworkCore' with options: OracleSQLCompatibility=11 
+ 2020-07-19 14:35:53,132  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (232ms) [Parameters=[:p0='?' (Size = 10), :p1='?' (Size = 250), :p2='?' (Size = 30), :p3='?' (DbType = Date), cur1='?' (Direction = Output) (DbType = Object)], CommandType='Text', CommandTimeout='0']
+DECLARE
+TYPE rHEA_AGENTS_0 IS RECORD
+(
+"ID" NUMBER(10)
+);
+TYPE tHEA_AGENTS_0 IS TABLE OF rHEA_AGENTS_0;
+lHEA_AGENTS_0 tHEA_AGENTS_0;
+v_RowCount INTEGER;
+BEGIN
+
+lHEA_AGENTS_0 := tHEA_AGENTS_0();
+lHEA_AGENTS_0.extend(1);
+INSERT INTO "MSIG"."HEA_AGENTS" ("AGENT_CODE", "AGENT_NAME", "UPDATED_BY", "UPDATED_DATE")
+VALUES (:p0, :p1, :p2, :p3)
+RETURNING "ID" INTO lHEA_AGENTS_0(1)."ID";
+OPEN :cur1 FOR SELECT lHEA_AGENTS_0(1)."ID" FROM DUAL;
+END;
+ 2020-07-19 14:35:53,258  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 2560.8753ms.
+ 2020-07-19 14:35:53,262  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HealthCareApi.Models.HeaAgents'.
+ 2020-07-19 14:35:53,301  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi) in 3108.2554ms
+ 2020-07-19 14:35:53,311  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 3150.532ms 201 application/json; charset=utf-8
+ 2020-07-19 14:37:42,900  INFO Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.? [?] - MESSAGE: User profile is available. Using 'C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+ 2020-07-19 14:37:43,512  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:44371/api/values  
+ 2020-07-19 14:37:43,513  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 DEBUG http://localhost:64735/  0
+ 2020-07-19 14:37:43,558  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 33.8114ms 200 
+ 2020-07-19 14:37:43,729  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller HealthCareApi.Controllers.ValuesController (HealthCareApi).
+ 2020-07-19 14:37:43,743  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HealthCareApi.Controllers.ValuesController.Get (HealthCareApi) - Validation state: Valid
+ 2020-07-19 14:37:43,750  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HealthCareApi.Controllers.ValuesController.Get (HealthCareApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.4513ms.
+ 2020-07-19 14:37:43,762  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'System.String[]'.
+ 2020-07-19 14:37:43,811  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HealthCareApi.Controllers.ValuesController.Get (HealthCareApi) in 75.4594ms
+ 2020-07-19 14:37:43,822  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 310.6957ms 200 application/json; charset=utf-8
+ 2020-07-19 14:43:04,095  INFO Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.? [?] - MESSAGE: User profile is available. Using 'C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+ 2020-07-19 14:43:04,792  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET http://localhost:44371/api/values  
+ 2020-07-19 14:43:04,793  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 DEBUG http://localhost:64735/  0
+ 2020-07-19 14:43:04,826  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 32.8499ms 200 
+ 2020-07-19 14:43:05,003  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller HealthCareApi.Controllers.ValuesController (HealthCareApi).
+ 2020-07-19 14:43:05,015  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HealthCareApi.Controllers.ValuesController.Get (HealthCareApi) - Validation state: Valid
+ 2020-07-19 14:43:05,022  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HealthCareApi.Controllers.ValuesController.Get (HealthCareApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.4202ms.
+ 2020-07-19 14:43:05,034  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'System.String[]'.
+ 2020-07-19 14:43:05,082  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HealthCareApi.Controllers.ValuesController.Get (HealthCareApi) in 72.8529ms
+ 2020-07-19 14:43:05,095  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 304.6652ms 200 application/json; charset=utf-8
+ 2020-07-19 14:43:35,462  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65
+ 2020-07-19 14:43:35,484  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "PostHeaAgents", controller = "Agent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent) on controller HealthCareApi.Controllers.AgentController (HealthCareApi).
+ 2020-07-19 14:43:35,994  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi) - Validation state: Valid
+ 2020-07-19 14:43:36,706  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.1.14-servicing-32113 initialized 'ModelContext' using provider 'Oracle.EntityFrameworkCore' with options: OracleSQLCompatibility=11 
+ 2020-07-19 14:43:38,314  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (213ms) [Parameters=[:p0='?' (Size = 10), :p1='?' (Size = 250), :p2='?' (Size = 30), :p3='?' (DbType = Date), cur1='?' (Direction = Output) (DbType = Object)], CommandType='Text', CommandTimeout='0']
+DECLARE
+TYPE rHEA_AGENTS_0 IS RECORD
+(
+"ID" NUMBER(10)
+);
+TYPE tHEA_AGENTS_0 IS TABLE OF rHEA_AGENTS_0;
+lHEA_AGENTS_0 tHEA_AGENTS_0;
+v_RowCount INTEGER;
+BEGIN
+
+lHEA_AGENTS_0 := tHEA_AGENTS_0();
+lHEA_AGENTS_0.extend(1);
+INSERT INTO "MSIG"."HEA_AGENTS" ("AGENT_CODE", "AGENT_NAME", "UPDATED_BY", "UPDATED_DATE")
+VALUES (:p0, :p1, :p2, :p3)
+RETURNING "ID" INTO lHEA_AGENTS_0(1)."ID";
+OPEN :cur1 FOR SELECT lHEA_AGENTS_0(1)."ID" FROM DUAL;
+END;
+ 2020-07-19 14:43:38,430  INFO HealthCareApi.Controllers.AgentController.? [?] - MESSAGE: Created Agent success!
+ 2020-07-19 14:43:38,439  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 2439.185ms.
+ 2020-07-19 14:43:38,446  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HealthCareApi.Models.HeaAgents'.
+ 2020-07-19 14:43:38,478  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi) in 2988.2695ms
+ 2020-07-19 14:43:38,488  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 3024.4793ms 201 application/json; charset=utf-8
+ 

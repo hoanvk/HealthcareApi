@@ -1,0 +1,24 @@
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
+
+namespace HealthCareApi
+{
+#pragma warning disable CS1591
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateWebHostBuilder(args).Build().Run();
+        }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging(builder =>
+                {                    
+                    builder.AddFile("Logs/log-{Date}.txt");
+                })
+                .UseStartup<Startup>();
+    }
+#pragma warning restore CS1591
+}

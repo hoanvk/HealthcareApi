@@ -1,0 +1,321 @@
+2020-07-19T14:49:50.6211810+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T14:49:51.1652026+07:00 0HM1BN18KGK48:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T14:49:51.1652027+07:00 0HM1BN18KGK47:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T14:49:51.2076132+07:00 0HM1BN18KGK47:00000001 [INF] Request finished in 36.5291ms 200  (791a596a)
+2020-07-19T14:49:51.3848842+07:00 0HM1BN18KGK48:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T14:49:51.3962472+07:00 0HM1BN18KGK48:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T14:49:51.4029022+07:00 0HM1BN18KGK48:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.4161ms. (50a9e262)
+2020-07-19T14:49:51.4131860+07:00 0HM1BN18KGK48:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T14:49:51.4817865+07:00 0HM1BN18KGK48:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 90.6327ms (afa2e885)
+2020-07-19T14:49:51.4900770+07:00 0HM1BN18KGK48:00000001 [INF] Request finished in 328.9313ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T14:49:54.9401625+07:00 0HM1BN18KGK47:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65 (ca22a1cb)
+2020-07-19T14:49:54.9820992+07:00 0HM1BN18KGK47:00000002 [INF] Route matched with "{action = \"PostHeaAgents\", controller = \"Agent\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent)" on controller "HealthCareApi.Controllers.AgentController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T14:49:55.7046693+07:00 0HM1BN18KGK47:00000002 [INF] Executing action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T14:49:56.5411127+07:00 0HM1BN18KGK47:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
+2020-07-19T14:49:58.5978470+07:00 0HM1BN18KGK47:00000002 [INF] Executed DbCommand ("260"ms) [Parameters=[":p0='?' (Size = 10), :p1='?' (Size = 250), :p2='?' (Size = 30), :p3='?' (DbType = Date), cur1='?' (Direction = Output) (DbType = Object)"], CommandType='Text', CommandTimeout='0']"
+""DECLARE
+TYPE rHEA_AGENTS_0 IS RECORD
+(
+\"ID\" NUMBER(10)
+);
+TYPE tHEA_AGENTS_0 IS TABLE OF rHEA_AGENTS_0;
+lHEA_AGENTS_0 tHEA_AGENTS_0;
+v_RowCount INTEGER;
+BEGIN
+
+lHEA_AGENTS_0 := tHEA_AGENTS_0();
+lHEA_AGENTS_0.extend(1);
+INSERT INTO \"MSIG\".\"HEA_AGENTS\" (\"AGENT_CODE\", \"AGENT_NAME\", \"UPDATED_BY\", \"UPDATED_DATE\")
+VALUES (:p0, :p1, :p2, :p3)
+RETURNING \"ID\" INTO lHEA_AGENTS_0(1).\"ID\";
+OPEN :cur1 FOR SELECT lHEA_AGENTS_0(1).\"ID\" FROM DUAL;
+END;" (0723d8ff)
+2020-07-19T14:49:58.7660159+07:00 0HM1BN18KGK47:00000002 [INF] Created Agent success! (761ee9a0)
+2020-07-19T14:49:58.7735140+07:00 0HM1BN18KGK47:00000002 [INF] Executed action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 3064.8775ms. (50a9e262)
+2020-07-19T14:49:58.7766209+07:00 0HM1BN18KGK47:00000002 [INF] Executing ObjectResult, writing value of type '"HealthCareApi.Models.HeaAgents"'. (8a1b66c8)
+2020-07-19T14:49:58.8099393+07:00 0HM1BN18KGK47:00000002 [INF] Executed action "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" in 3823.7476ms (afa2e885)
+2020-07-19T14:49:58.8225296+07:00 0HM1BN18KGK47:00000002 [INF] Request finished in 3876.4082ms 201 application/json; charset=utf-8 (791a596a)
+2020-07-19T15:01:10.7434905+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T15:01:11.3051513+07:00 0HM1BN7JARKGJ:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T15:01:11.3051509+07:00 0HM1BN7JARKGI:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T15:01:11.3403391+07:00 0HM1BN7JARKGJ:00000001 [INF] Request finished in 32.4716ms 200  (791a596a)
+2020-07-19T15:01:11.5082912+07:00 0HM1BN7JARKGI:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T15:01:11.5194478+07:00 0HM1BN7JARKGI:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T15:01:11.5252680+07:00 0HM1BN7JARKGI:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.4157ms. (50a9e262)
+2020-07-19T15:01:11.5335064+07:00 0HM1BN7JARKGI:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T15:01:11.6087175+07:00 0HM1BN7JARKGI:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 94.0972ms (afa2e885)
+2020-07-19T15:01:11.6160556+07:00 0HM1BN7JARKGI:00000001 [INF] Request finished in 314.8874ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T15:01:14.8371966+07:00 0HM1BN7JARKGJ:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65 (ca22a1cb)
+2020-07-19T15:01:14.8795974+07:00 0HM1BN7JARKGJ:00000002 [INF] Route matched with "{action = \"PostHeaAgents\", controller = \"Agent\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent)" on controller "HealthCareApi.Controllers.AgentController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T15:01:15.6759015+07:00 0HM1BN7JARKGJ:00000002 [INF] Executing action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T15:01:16.5373290+07:00 0HM1BN7JARKGJ:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
+2020-07-19T15:01:18.5859815+07:00 0HM1BN7JARKGJ:00000002 [INF] Executed DbCommand ("235"ms) [Parameters=[":p0='?' (Size = 10), :p1='?' (Size = 250), :p2='?' (Size = 30), :p3='?' (DbType = Date), cur1='?' (Direction = Output) (DbType = Object)"], CommandType='Text', CommandTimeout='0']"
+""DECLARE
+TYPE rHEA_AGENTS_0 IS RECORD
+(
+\"ID\" NUMBER(10)
+);
+TYPE tHEA_AGENTS_0 IS TABLE OF rHEA_AGENTS_0;
+lHEA_AGENTS_0 tHEA_AGENTS_0;
+v_RowCount INTEGER;
+BEGIN
+
+lHEA_AGENTS_0 := tHEA_AGENTS_0();
+lHEA_AGENTS_0.extend(1);
+INSERT INTO \"MSIG\".\"HEA_AGENTS\" (\"AGENT_CODE\", \"AGENT_NAME\", \"UPDATED_BY\", \"UPDATED_DATE\")
+VALUES (:p0, :p1, :p2, :p3)
+RETURNING \"ID\" INTO lHEA_AGENTS_0(1).\"ID\";
+OPEN :cur1 FOR SELECT lHEA_AGENTS_0(1).\"ID\" FROM DUAL;
+END;" (0723d8ff)
+2020-07-19T15:01:18.7302656+07:00 0HM1BN7JARKGJ:00000002 [INF] Created Agent success! (761ee9a0)
+2020-07-19T15:01:18.7359531+07:00 0HM1BN7JARKGJ:00000002 [INF] Executed action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 3057.0726ms. (50a9e262)
+2020-07-19T15:01:18.7400047+07:00 0HM1BN7JARKGJ:00000002 [INF] Executing ObjectResult, writing value of type '"HealthCareApi.Models.HeaAgents"'. (8a1b66c8)
+2020-07-19T15:01:18.7726301+07:00 0HM1BN7JARKGJ:00000002 [INF] Executed action "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" in 3889.607ms (afa2e885)
+2020-07-19T15:01:18.7802959+07:00 0HM1BN7JARKGJ:00000002 [INF] Request finished in 3941.3276ms 201 application/json; charset=utf-8 (791a596a)
+2020-07-19T15:01:53.7545173+07:00 0HM1BN7JARKGI:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65 (ca22a1cb)
+2020-07-19T15:01:53.7569281+07:00 0HM1BN7JARKGI:00000002 [INF] Route matched with "{action = \"PostHeaAgents\", controller = \"Agent\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent)" on controller "HealthCareApi.Controllers.AgentController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T15:01:53.7608730+07:00 0HM1BN7JARKGI:00000002 [INF] Executing action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T15:01:53.7812313+07:00 0HM1BN7JARKGI:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
+2020-07-19T15:01:53.8191356+07:00 0HM1BN7JARKGI:00000002 [INF] Executed DbCommand ("3"ms) [Parameters=[":p0='?' (Size = 10), :p1='?' (Size = 250), :p2='?' (Size = 30), :p3='?' (DbType = Date), cur1='?' (Direction = Output) (DbType = Object)"], CommandType='Text', CommandTimeout='0']"
+""DECLARE
+TYPE rHEA_AGENTS_0 IS RECORD
+(
+\"ID\" NUMBER(10)
+);
+TYPE tHEA_AGENTS_0 IS TABLE OF rHEA_AGENTS_0;
+lHEA_AGENTS_0 tHEA_AGENTS_0;
+v_RowCount INTEGER;
+BEGIN
+
+lHEA_AGENTS_0 := tHEA_AGENTS_0();
+lHEA_AGENTS_0.extend(1);
+INSERT INTO \"MSIG\".\"HEA_AGENTS\" (\"AGENT_CODE\", \"AGENT_NAME\", \"UPDATED_BY\", \"UPDATED_DATE\")
+VALUES (:p0, :p1, :p2, :p3)
+RETURNING \"ID\" INTO lHEA_AGENTS_0(1).\"ID\";
+OPEN :cur1 FOR SELECT lHEA_AGENTS_0(1).\"ID\" FROM DUAL;
+END;" (0723d8ff)
+2020-07-19T15:01:53.8245622+07:00 0HM1BN7JARKGI:00000002 [INF] Created Agent success! (761ee9a0)
+2020-07-19T15:01:53.8279669+07:00 0HM1BN7JARKGI:00000002 [INF] Executed action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 63.7952ms. (50a9e262)
+2020-07-19T15:01:53.8321606+07:00 0HM1BN7JARKGI:00000002 [INF] Executing ObjectResult, writing value of type '"HealthCareApi.Models.HeaAgents"'. (8a1b66c8)
+2020-07-19T15:01:53.8380307+07:00 0HM1BN7JARKGI:00000002 [INF] Executed action "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" in 76.2929ms (afa2e885)
+2020-07-19T15:01:53.8412403+07:00 0HM1BN7JARKGI:00000002 [INF] Request finished in 85.7004ms 201 application/json; charset=utf-8 (791a596a)
+2020-07-19T16:00:58.4101550+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T16:00:59.0794879+07:00 0HM1BO90IAT9V:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T16:00:59.0794879+07:00 0HM1BO90IAT9U:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T16:00:59.1144268+07:00 0HM1BO90IAT9U:00000001 [INF] Request finished in 39.7238ms 200  (791a596a)
+2020-07-19T16:00:59.3478830+07:00 0HM1BO90IAT9V:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T16:00:59.3604013+07:00 0HM1BO90IAT9V:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T16:00:59.3662321+07:00 0HM1BO90IAT9V:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.2671ms. (50a9e262)
+2020-07-19T16:00:59.3764900+07:00 0HM1BO90IAT9V:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T16:00:59.4494006+07:00 0HM1BO90IAT9V:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 95.5428ms (afa2e885)
+2020-07-19T16:00:59.4564714+07:00 0HM1BO90IAT9V:00000001 [INF] Request finished in 382.366ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T16:01:12.6222518+07:00 0HM1BO90IAT9U:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/swagger   (ca22a1cb)
+2020-07-19T16:01:12.6256804+07:00 0HM1BO90IAT9U:00000002 [INF] Request finished in 3.3074ms 404  (791a596a)
+2020-07-19T16:01:46.3550115+07:00 0HM1BO90IAT9V:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger   (ca22a1cb)
+2020-07-19T16:01:46.3582561+07:00 0HM1BO90IAT9V:00000002 [INF] Request finished in 2.8944ms 301  (791a596a)
+2020-07-19T16:01:46.3652062+07:00 0HM1BO90IAT9U:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/index.html   (ca22a1cb)
+2020-07-19T16:01:46.4864621+07:00 0HM1BO90IAT9U:00000003 [INF] Request finished in 121.3007ms 200 text/html;charset=utf-8 (791a596a)
+2020-07-19T16:01:46.5215139+07:00 0HM1BO90IAT9U:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/swagger-ui-bundle.js   (ca22a1cb)
+2020-07-19T16:01:46.5254922+07:00 0HM1BO90IAT9V:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/swagger-ui.css   (ca22a1cb)
+2020-07-19T16:01:46.5274930+07:00 0HM1BO90IATA0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/swagger-ui-standalone-preset.js   (ca22a1cb)
+2020-07-19T16:01:46.5901355+07:00 0HM1BO90IATA0:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T16:01:46.5962607+07:00 0HM1BO90IAT9V:00000003 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T16:01:46.6053378+07:00 0HM1BO90IAT9U:00000004 [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T16:01:46.6065016+07:00 0HM1BO90IAT9V:00000003 [INF] Request finished in 81.7808ms 200 text/css (791a596a)
+2020-07-19T16:01:46.6112293+07:00 0HM1BO90IAT9U:00000004 [INF] Request finished in 87.1389ms 200 application/javascript (791a596a)
+2020-07-19T16:01:46.6124326+07:00 0HM1BO90IATA0:00000001 [INF] Request finished in 80.8318ms 200 application/javascript (791a596a)
+2020-07-19T16:01:46.9592076+07:00 0HM1BO90IAT9V:00000004 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/v1/swagger.json   (ca22a1cb)
+2020-07-19T16:01:47.0075340+07:00 0HM1BO90IATA0:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/favicon-32x32.png   (ca22a1cb)
+2020-07-19T16:01:47.0239333+07:00 0HM1BO90IATA0:00000002 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T16:01:47.0405322+07:00 0HM1BO90IATA0:00000002 [INF] Request finished in 22.3018ms 200 image/png (791a596a)
+2020-07-19T16:01:47.2315605+07:00 0HM1BO90IAT9V:00000004 [INF] Request finished in 267.8013ms 200 application/json;charset=utf-8 (791a596a)
+2020-07-19T18:41:48.9810133+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T18:41:50.1079327+07:00 0HM1BR2SP2N6O:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T18:41:50.1079326+07:00 0HM1BR2SP2N6P:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T18:41:50.1693418+07:00 0HM1BR2SP2N6O:00000001 [INF] Request finished in 71.1039ms 200  (791a596a)
+2020-07-19T18:41:50.5626972+07:00 0HM1BR2SP2N6P:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T18:41:50.5860035+07:00 0HM1BR2SP2N6P:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T18:41:50.5962343+07:00 0HM1BR2SP2N6P:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.3898ms. (50a9e262)
+2020-07-19T18:41:50.6141782+07:00 0HM1BR2SP2N6P:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T18:41:50.7324908+07:00 0HM1BR2SP2N6P:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 159.2625ms (afa2e885)
+2020-07-19T18:41:50.7437260+07:00 0HM1BR2SP2N6P:00000001 [INF] Request finished in 646.4822ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T18:42:14.8724225+07:00 0HM1BR2SP2N6O:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/agent   (ca22a1cb)
+2020-07-19T18:42:14.8889985+07:00 0HM1BR2SP2N6O:00000002 [INF] Route matched with "{action = \"GetHeaAgents\", controller = \"Agent\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[HealthCareApi.Dtos.Agent]] GetHeaAgents()" on controller "HealthCareApi.Controllers.AgentController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T18:42:15.6905133+07:00 0HM1BR2SP2N6O:00000002 [INF] Executing action method "HealthCareApi.Controllers.AgentController.GetHeaAgents (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T18:42:16.5729073+07:00 0HM1BR2SP2N6O:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
+2020-07-19T18:42:18.8580535+07:00 0HM1BR2SP2N6O:00000002 [INF] Executed DbCommand ("192"ms) [Parameters=[""], CommandType='Text', CommandTimeout='0']"
+""SELECT \"h\".\"ID\", \"h\".\"AGENT_CODE\", \"h\".\"AGENT_NAME\", \"h\".\"UPDATED_BY\", \"h\".\"UPDATED_DATE\"
+FROM \"MSIG\".\"HEA_AGENTS\" \"h\"" (0723d8ff)
+2020-07-19T18:42:19.1257122+07:00 0HM1BR2SP2N6O:00000002 [INF] Executed action method "HealthCareApi.Controllers.AgentController.GetHeaAgents (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3431.0828ms. (50a9e262)
+2020-07-19T18:42:19.1313651+07:00 0HM1BR2SP2N6O:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[HealthCareApi.Dtos.Agent, HealthCareApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2020-07-19T18:42:19.1567653+07:00 0HM1BR2SP2N6O:00000002 [INF] Executed action "HealthCareApi.Controllers.AgentController.GetHeaAgents (HealthCareApi)" in 4263.7837ms (afa2e885)
+2020-07-19T18:42:19.1669581+07:00 0HM1BR2SP2N6O:00000002 [INF] Request finished in 4291.966ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:34:22.4987200+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T20:34:23.1407166+07:00 0HM1BT1PBH1CS:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T20:34:23.1407170+07:00 0HM1BT1PBH1CT:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T20:34:23.1716342+07:00 0HM1BT1PBH1CT:00000001 [INF] Request finished in 35.0296ms 200  (791a596a)
+2020-07-19T20:34:23.3740021+07:00 0HM1BT1PBH1CS:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:34:23.3852020+07:00 0HM1BT1PBH1CS:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T20:34:23.3909367+07:00 0HM1BT1PBH1CS:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.242ms. (50a9e262)
+2020-07-19T20:34:23.4012342+07:00 0HM1BT1PBH1CS:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T20:34:23.4699191+07:00 0HM1BT1PBH1CS:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 89.9972ms (afa2e885)
+2020-07-19T20:34:23.4767398+07:00 0HM1BT1PBH1CS:00000001 [INF] Request finished in 339.9617ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:34:30.6813866+07:00 0HM1BT1PBH1CT:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65 (ca22a1cb)
+2020-07-19T20:34:30.7041642+07:00 0HM1BT1PBH1CT:00000002 [INF] Route matched with "{action = \"PostHeaAgents\", controller = \"Agent\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent)" on controller "HealthCareApi.Controllers.AgentController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:34:32.0536073+07:00 0HM1BT1PBH1CT:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
+2020-07-19T20:34:33.8443209+07:00 0HM1BT1PBH1CT:00000002 [INF] Executed DbCommand ("236"ms) [Parameters=[":agent_AgentCode_0='?' (Size = 10), :agent_AgentName_1='?' (Size = 250)"], CommandType='Text', CommandTimeout='0']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"MSIG\".\"HEA_AGENTS\" \"e\"
+        WHERE (((\"e\".\"AGENT_CODE\" = :agent_AgentCode_0)) AND ((\"e\".\"AGENT_NAME\" = :agent_AgentName_1))))
+    THEN 1 ELSE 0
+END FROM DUAL" (0723d8ff)
+2020-07-19T20:34:33.9398177+07:00 0HM1BT1PBH1CT:00000002 [INF] Executing action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T20:34:34.2331297+07:00 0HM1BT1PBH1CT:00000002 [INF] Executed DbCommand ("19"ms) [Parameters=[":p0='?' (Size = 10), :p1='?' (Size = 250), :p2='?' (Size = 30), :p3='?' (DbType = Date), cur1='?' (Direction = Output) (DbType = Object)"], CommandType='Text', CommandTimeout='0']"
+""DECLARE
+TYPE rHEA_AGENTS_0 IS RECORD
+(
+\"ID\" NUMBER(10)
+);
+TYPE tHEA_AGENTS_0 IS TABLE OF rHEA_AGENTS_0;
+lHEA_AGENTS_0 tHEA_AGENTS_0;
+v_RowCount INTEGER;
+BEGIN
+
+lHEA_AGENTS_0 := tHEA_AGENTS_0();
+lHEA_AGENTS_0.extend(1);
+INSERT INTO \"MSIG\".\"HEA_AGENTS\" (\"AGENT_CODE\", \"AGENT_NAME\", \"UPDATED_BY\", \"UPDATED_DATE\")
+VALUES (:p0, :p1, :p2, :p3)
+RETURNING \"ID\" INTO lHEA_AGENTS_0(1).\"ID\";
+OPEN :cur1 FOR SELECT lHEA_AGENTS_0(1).\"ID\" FROM DUAL;
+END;" (0723d8ff)
+2020-07-19T20:34:34.2975290+07:00 0HM1BT1PBH1CT:00000002 [INF] Executed action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 354.6084ms. (50a9e262)
+2020-07-19T20:34:34.3009310+07:00 0HM1BT1PBH1CT:00000002 [INF] Executing ObjectResult, writing value of type '"HealthCareApi.Dtos.Agent"'. (8a1b66c8)
+2020-07-19T20:34:34.3237599+07:00 0HM1BT1PBH1CT:00000002 [INF] Executed action "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" in 3615.6326ms (afa2e885)
+2020-07-19T20:34:34.3312023+07:00 0HM1BT1PBH1CT:00000002 [INF] Request finished in 3647.0227ms 201 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:34:37.8715415+07:00 0HM1BT1PBH1CS:00000002 [INF] Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65 (ca22a1cb)
+2020-07-19T20:34:37.8738768+07:00 0HM1BT1PBH1CS:00000002 [INF] Route matched with "{action = \"PostHeaAgents\", controller = \"Agent\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent)" on controller "HealthCareApi.Controllers.AgentController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:34:37.8790810+07:00 0HM1BT1PBH1CS:00000002 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
+2020-07-19T20:34:37.8871823+07:00 0HM1BT1PBH1CS:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[":agent_AgentCode_0='?' (Size = 10), :agent_AgentName_1='?' (Size = 250)"], CommandType='Text', CommandTimeout='0']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"MSIG\".\"HEA_AGENTS\" \"e\"
+        WHERE (((\"e\".\"AGENT_CODE\" = :agent_AgentCode_0)) AND ((\"e\".\"AGENT_NAME\" = :agent_AgentName_1))))
+    THEN 1 ELSE 0
+END FROM DUAL" (0723d8ff)
+2020-07-19T20:34:37.8894803+07:00 0HM1BT1PBH1CS:00000002 [INF] Executing action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T20:34:37.8969116+07:00 0HM1BT1PBH1CS:00000002 [INF] Executed DbCommand ("2"ms) [Parameters=[":p0='?' (Size = 10), :p1='?' (Size = 250), :p2='?' (Size = 30), :p3='?' (DbType = Date), cur1='?' (Direction = Output) (DbType = Object)"], CommandType='Text', CommandTimeout='0']"
+""DECLARE
+TYPE rHEA_AGENTS_0 IS RECORD
+(
+\"ID\" NUMBER(10)
+);
+TYPE tHEA_AGENTS_0 IS TABLE OF rHEA_AGENTS_0;
+lHEA_AGENTS_0 tHEA_AGENTS_0;
+v_RowCount INTEGER;
+BEGIN
+
+lHEA_AGENTS_0 := tHEA_AGENTS_0();
+lHEA_AGENTS_0.extend(1);
+INSERT INTO \"MSIG\".\"HEA_AGENTS\" (\"AGENT_CODE\", \"AGENT_NAME\", \"UPDATED_BY\", \"UPDATED_DATE\")
+VALUES (:p0, :p1, :p2, :p3)
+RETURNING \"ID\" INTO lHEA_AGENTS_0(1).\"ID\";
+OPEN :cur1 FOR SELECT lHEA_AGENTS_0(1).\"ID\" FROM DUAL;
+END;" (0723d8ff)
+2020-07-19T20:34:37.9014256+07:00 0HM1BT1PBH1CS:00000002 [INF] Executed action method "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 9.9311ms. (50a9e262)
+2020-07-19T20:34:37.9042196+07:00 0HM1BT1PBH1CS:00000002 [INF] Executing ObjectResult, writing value of type '"HealthCareApi.Dtos.Agent"'. (8a1b66c8)
+2020-07-19T20:34:37.9068432+07:00 0HM1BT1PBH1CS:00000002 [INF] Executed action "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" in 30.8961ms (afa2e885)
+2020-07-19T20:34:37.9118781+07:00 0HM1BT1PBH1CS:00000002 [INF] Request finished in 37.3954ms 201 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:35:18.6729606+07:00 0HM1BT1PBH1CT:00000003 [INF] Request starting HTTP/1.1 POST http://localhost:44371/api/agent application/json 65 (ca22a1cb)
+2020-07-19T20:35:18.6751575+07:00 0HM1BT1PBH1CT:00000003 [INF] Route matched with "{action = \"PostHeaAgents\", controller = \"Agent\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostHeaAgents(HealthCareApi.Dtos.Agent)" on controller "HealthCareApi.Controllers.AgentController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:35:18.6777334+07:00 0HM1BT1PBH1CT:00000003 [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
+2020-07-19T20:35:18.6807327+07:00 0HM1BT1PBH1CT:00000003 [INF] Executed DbCommand ("0"ms) [Parameters=[":agent_AgentCode_0='?' (Size = 10), :agent_AgentName_1='?' (Size = 250)"], CommandType='Text', CommandTimeout='0']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM \"MSIG\".\"HEA_AGENTS\" \"e\"
+        WHERE (((\"e\".\"AGENT_CODE\" = :agent_AgentCode_0)) AND ((\"e\".\"AGENT_NAME\" = :agent_AgentName_1))))
+    THEN 1 ELSE 0
+END FROM DUAL" (0723d8ff)
+2020-07-19T20:35:18.6847011+07:00 0HM1BT1PBH1CT:00000003 [INF] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.SerializableError"'. (8a1b66c8)
+2020-07-19T20:35:18.6884505+07:00 0HM1BT1PBH1CT:00000003 [INF] Executed action "HealthCareApi.Controllers.AgentController.PostHeaAgents (HealthCareApi)" in 11.2014ms (afa2e885)
+2020-07-19T20:35:18.6908111+07:00 0HM1BT1PBH1CT:00000003 [INF] Request finished in 17.5869ms 400 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:38:13.8763011+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T20:38:14.6972716+07:00 0HM1BT3UBJFM0:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T20:38:14.6972712+07:00 0HM1BT3UBJFM1:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T20:38:14.7499266+07:00 0HM1BT3UBJFM1:00000001 [INF] Request finished in 58.8391ms 200  (791a596a)
+2020-07-19T20:38:14.9876228+07:00 0HM1BT3UBJFM0:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:38:15.0010762+07:00 0HM1BT3UBJFM0:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T20:38:15.0076000+07:00 0HM1BT3UBJFM0:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.286ms. (50a9e262)
+2020-07-19T20:38:15.0193175+07:00 0HM1BT3UBJFM0:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T20:38:15.0819459+07:00 0HM1BT3UBJFM0:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 87.5523ms (afa2e885)
+2020-07-19T20:38:15.0892368+07:00 0HM1BT3UBJFM0:00000001 [INF] Request finished in 401.2174ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:38:30.3485639+07:00 0HM1BT3UBJFM1:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/swagger   (ca22a1cb)
+2020-07-19T20:38:30.3520825+07:00 0HM1BT3UBJFM1:00000002 [INF] Request finished in 3.0026ms 404  (791a596a)
+2020-07-19T20:38:35.3498440+07:00 0HM1BT3UBJFM0:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/index.html   (ca22a1cb)
+2020-07-19T20:38:35.5122103+07:00 0HM1BT3UBJFM0:00000002 [INF] Request finished in 162.0244ms 200 text/html;charset=utf-8 (791a596a)
+2020-07-19T20:38:35.8335106+07:00 0HM1BT3UBJFM1:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/v1/swagger.json   (ca22a1cb)
+2020-07-19T20:38:36.0121590+07:00 0HM1BT3UBJFM1:00000003 [INF] Request finished in 177.7522ms 200 application/json;charset=utf-8 (791a596a)
+2020-07-19T20:44:12.0910884+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T20:44:12.7915531+07:00 0HM1BT792PU7J:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T20:44:12.7915531+07:00 0HM1BT792PU7K:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T20:44:12.8229404+07:00 0HM1BT792PU7K:00000001 [INF] Request finished in 35.1245ms 200  (791a596a)
+2020-07-19T20:44:13.0101669+07:00 0HM1BT792PU7J:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:44:13.0229549+07:00 0HM1BT792PU7J:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T20:44:13.0282226+07:00 0HM1BT792PU7J:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.254ms. (50a9e262)
+2020-07-19T20:44:13.0365095+07:00 0HM1BT792PU7J:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T20:44:13.1022572+07:00 0HM1BT792PU7J:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 85.4984ms (afa2e885)
+2020-07-19T20:44:13.1094064+07:00 0HM1BT792PU7J:00000001 [INF] Request finished in 321.7449ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:44:17.5273316+07:00 0HM1BT792PU7K:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/index.html   (ca22a1cb)
+2020-07-19T20:44:17.7522661+07:00 0HM1BT792PU7K:00000002 [INF] Request finished in 224.8994ms 200 text/html;charset=utf-8 (791a596a)
+2020-07-19T20:44:17.9665148+07:00 0HM1BT792PU7J:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/v1/swagger.json   (ca22a1cb)
+2020-07-19T20:44:18.1627277+07:00 0HM1BT792PU7J:00000002 [INF] Request finished in 196.1701ms 200 application/json;charset=utf-8 (791a596a)
+2020-07-19T20:45:19.0899038+07:00 0HM1BT792PU7L:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/index.html   (ca22a1cb)
+2020-07-19T20:45:19.0975339+07:00 0HM1BT792PU7L:00000001 [INF] Request finished in 8.0746ms 200 text/html;charset=utf-8 (791a596a)
+2020-07-19T20:45:19.1430370+07:00 0HM1BT792PU7L:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/swagger-ui.css   (ca22a1cb)
+2020-07-19T20:45:19.1458033+07:00 0HM1BT792PU7M:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/swagger-ui-bundle.js   (ca22a1cb)
+2020-07-19T20:45:19.1489998+07:00 0HM1BT792PU7N:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/swagger-ui-standalone-preset.js   (ca22a1cb)
+2020-07-19T20:45:19.1788028+07:00 0HM1BT792PU7N:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T20:45:19.1814642+07:00 0HM1BT792PU7L:00000002 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T20:45:19.1850681+07:00 0HM1BT792PU7M:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T20:45:19.1943103+07:00 0HM1BT792PU7N:00000001 [INF] Request finished in 43.5948ms 200 application/javascript (791a596a)
+2020-07-19T20:45:19.1967066+07:00 0HM1BT792PU7L:00000002 [INF] Request finished in 49.7451ms 200 text/css (791a596a)
+2020-07-19T20:45:19.1988606+07:00 0HM1BT792PU7M:00000001 [INF] Request finished in 46.9242ms 200 application/javascript (791a596a)
+2020-07-19T20:45:19.4621570+07:00 0HM1BT792PU7L:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/v1/swagger.json   (ca22a1cb)
+2020-07-19T20:45:19.4764565+07:00 0HM1BT792PU7L:00000003 [INF] Request finished in 5.8751ms 200 application/json;charset=utf-8 (791a596a)
+2020-07-19T20:45:19.4997502+07:00 0HM1BT792PU7N:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/favicon-32x32.png   (ca22a1cb)
+2020-07-19T20:45:19.5086479+07:00 0HM1BT792PU7N:00000002 [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2020-07-19T20:45:19.5114743+07:00 0HM1BT792PU7N:00000002 [INF] Request finished in 14.0723ms 200 image/png (791a596a)
+2020-07-19T20:46:15.0688523+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T20:46:15.6586235+07:00 0HM1BT8DMT6LS:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T20:46:15.6586242+07:00 0HM1BT8DMT6LT:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T20:46:15.6906507+07:00 0HM1BT8DMT6LS:00000001 [INF] Request finished in 36.3716ms 200  (791a596a)
+2020-07-19T20:46:15.9054453+07:00 0HM1BT8DMT6LT:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:46:15.9175714+07:00 0HM1BT8DMT6LT:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T20:46:15.9229197+07:00 0HM1BT8DMT6LT:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.2359ms. (50a9e262)
+2020-07-19T20:46:15.9333131+07:00 0HM1BT8DMT6LT:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T20:46:16.0114898+07:00 0HM1BT8DMT6LT:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 100.2451ms (afa2e885)
+2020-07-19T20:46:16.0186442+07:00 0HM1BT8DMT6LT:00000001 [INF] Request finished in 364.6286ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:46:16.1585768+07:00 0HM1BT8DMT6LS:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/favicon.ico   (ca22a1cb)
+2020-07-19T20:46:16.1630231+07:00 0HM1BT8DMT6LS:00000002 [INF] Request finished in 3.8982ms 404  (791a596a)
+2020-07-19T20:46:20.9261593+07:00 0HM1BT8DMT6LT:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/index.html   (ca22a1cb)
+2020-07-19T20:46:21.1427383+07:00 0HM1BT8DMT6LT:00000002 [INF] Request finished in 216.3417ms 200 text/html;charset=utf-8 (791a596a)
+2020-07-19T20:46:21.4742256+07:00 0HM1BT8DMT6LS:00000003 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/v1/swagger.json   (ca22a1cb)
+2020-07-19T20:46:21.6426717+07:00 0HM1BT8DMT6LS:00000003 [INF] Request finished in 168.0943ms 200 application/json;charset=utf-8 (791a596a)
+2020-07-19T20:55:39.5555894+07:00  [INF] User profile is available. Using '"C:\Users\hoanvk\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2020-07-19T20:55:40.0605401+07:00 0HM1BTDLTIUN5:00000001 [INF] Request starting HTTP/1.1 DEBUG http://localhost:64735/  0 (ca22a1cb)
+2020-07-19T20:55:40.0605395+07:00 0HM1BTDLTIUN6:00000001 [INF] Request starting HTTP/1.1 GET http://localhost:44371/api/values   (ca22a1cb)
+2020-07-19T20:55:40.0918693+07:00 0HM1BTDLTIUN5:00000001 [INF] Request finished in 34.7551ms 200  (791a596a)
+2020-07-19T20:55:40.3449435+07:00 0HM1BTDLTIUN6:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get()" on controller "HealthCareApi.Controllers.ValuesController" ("HealthCareApi"). (122b2fdf)
+2020-07-19T20:55:40.3607229+07:00 0HM1BTDLTIUN6:00000001 [INF] Executing action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" - Validation state: Valid (dad538d7)
+2020-07-19T20:55:40.3661234+07:00 0HM1BTDLTIUN6:00000001 [INF] Executed action method "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.3228ms. (50a9e262)
+2020-07-19T20:55:40.3748898+07:00 0HM1BTDLTIUN6:00000001 [INF] Executing ObjectResult, writing value of type '"System.String[]"'. (8a1b66c8)
+2020-07-19T20:55:40.4322895+07:00 0HM1BTDLTIUN6:00000001 [INF] Executed action "HealthCareApi.Controllers.ValuesController.Get (HealthCareApi)" in 81.7552ms (afa2e885)
+2020-07-19T20:55:40.4397340+07:00 0HM1BTDLTIUN6:00000001 [INF] Request finished in 382.0759ms 200 application/json; charset=utf-8 (791a596a)
+2020-07-19T20:55:44.6242585+07:00 0HM1BTDLTIUN5:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/index.html   (ca22a1cb)
+2020-07-19T20:55:44.8360439+07:00 0HM1BTDLTIUN5:00000002 [INF] Request finished in 211.85ms 200 text/html;charset=utf-8 (791a596a)
+2020-07-19T20:55:46.1644007+07:00 0HM1BTDLTIUN6:00000002 [INF] Request starting HTTP/1.1 GET http://localhost:44371/swagger/v1/swagger.json   (ca22a1cb)
+2020-07-19T20:55:46.3584357+07:00 0HM1BTDLTIUN6:00000002 [INF] Request finished in 194.2423ms 200 application/json;charset=utf-8 (791a596a)
+2020-07-19T22:41:41.7950356+07:00  [INF] Entity Framework Core "2.1.14-servicing-32113" initialized '"ModelContext"' using provider '"Oracle.EntityFrameworkCore"' with options: "OracleSQLCompatibility=11 " (9958f5bb)
